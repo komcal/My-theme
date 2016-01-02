@@ -21,12 +21,31 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
 .full{
+	background-color: rgb(134, 203, 222);
 }
 .main-page{
-	width: 1000px;
+	max-width: 1000px;
 	margin: 0 auto;
-}
+	background-color: rgb(66, 163, 205);
 
+}
+.inner{
+	padding: 2em 0;
+}
+#primary{
+	float: left;
+	margin-right: 1%;
+	padding: 5px 10px ;
+	width: 65%;
+	background-color: white;
+}
+#secondary{
+	float: left;
+	padding-left: 10px;
+	padding-top: 5px;
+	width: 34%;
+	background-color: white;
+}
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -692,19 +711,11 @@ textarea {
 .main-navigation .current-menu-ancestor > a {
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+.menu-toggle{
+	display: none;
 }
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+.main-navigation ul{
+	display: block;
 }
 
 .site-main .comment-navigation,
@@ -873,4 +884,22 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+@media screen and (max-width: 700px) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+	.main-navigation ul{
+		display: none;
+	}
+	#primary,
+	#secondary{
+		float: none;
+		width: 100%;
+	}
 }
